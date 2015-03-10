@@ -1,2 +1,0 @@
-Legge til tekstfarge i konsoll (Visualisere kunder / biler):
-http://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
