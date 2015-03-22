@@ -1,3 +1,5 @@
+import sun.security.util.*;
+
 import java.sql.*;
 import java.util.*;
 
@@ -51,7 +53,7 @@ public class Quiz implements AutoCloseable {
 
     public void getNewBookFromList() {
         int count = getBooks().size();
-        setCurrentBook(getBooks().get((int) (Math.random() * count) + 1));
+        setCurrentBook(getBooks().get((int) (Math.random() * count)));
     }
 
     public List<Book> getBooks() {
@@ -72,7 +74,7 @@ public class Quiz implements AutoCloseable {
 
     @Override
     public void close() throws Exception {
-        //Debug.println("Quiz DatabaseConverter", "Closed");
+        Debug.println("Quiz DatabaseConverter", "Closed");
         dbConverter.close();
     }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Book</OriginalElement>
+  <nodes>
+    <node x="359.0" y="23.0">Book</node>
+    <node x="0.0" y="0.0">ConnectToDB</node>
+    <node x="212.875" y="568.0">Quiz</node>
+    <node x="312.875" y="892.0">ClientConnection</node>
+    <node x="683.2563098640843" y="864.7669346088785">Client.Listener</node>
+    <node x="120.94444444444446" y="300.0">DatabaseConverter</node>
+    <node x="250.875" y="1149.0">Server</node>
+    <node x="1037.8396721693982" y="888.5210709910751">Client</node>
+    <node x="671.5299107507436" y="994.6957440354663">Client.Writer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Client.Listener" target="Client">
+      <point x="77.66666666666674" y="59.5" />
+      <point x="860.7330926131169" y="892.0755655369538" />
+      <point x="1030.0906535223316" y="907.7738097182524" />
+      <point x="84.33333333333337" y="-82.0" />
+    </edge>
+    <edge source="Client" target="Client.Listener">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="DatabaseConverter" target="Book">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="DatabaseConverter" target="ConnectToDB">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ClientConnection" target="Quiz">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Client.Writer" target="Client">
+      <point x="-84.33333333333326" y="-59.5" />
+      <point x="-84.33333333333337" y="82.0" />
+    </edge>
+    <edge source="Quiz" target="DatabaseConverter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Quiz" target="Book">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Server" target="ClientConnection">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Client" target="Client.Writer">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9007153075822603" x="658.7091804320204" y="858.5800508259213" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

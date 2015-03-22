@@ -1,3 +1,5 @@
+import sun.security.util.*;
+
 import java.sql.*;
 import java.util.*;
 
@@ -8,7 +10,7 @@ public class DatabaseConverter implements AutoCloseable {
     private final String USER = "root";
     private final String PASSWORD = "";
     public List<Book> books;
-    private ConnectToDB db;
+    public ConnectToDB db;
 
     public DatabaseConverter(ConnectToDB db) throws SQLException {
         setDb(db);
@@ -46,7 +48,7 @@ public class DatabaseConverter implements AutoCloseable {
 
     @Override
     public void close() throws Exception {
-        //Debug.println("DatabaseConverter ConnectToDB", "Closed");
+        Debug.println("DatabaseConverter ConnectToDB", "Closed");
         db.close();
     }
 }

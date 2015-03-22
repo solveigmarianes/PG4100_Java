@@ -1,4 +1,5 @@
 import com.mysql.jdbc.jdbc2.optional.*;
+import sun.security.util.*;
 
 import java.sql.*;
 
@@ -25,7 +26,7 @@ public class ConnectToDB implements AutoCloseable {
 
     @Override
     public void close() throws SQLException {
-        //Debug.println("ConnectToDB Connection", "Closed");
+        Debug.println("ConnectToDB Connection", "Closed");
         con.close();
     }
 

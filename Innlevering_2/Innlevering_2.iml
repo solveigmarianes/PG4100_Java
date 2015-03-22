@@ -23,5 +23,6 @@
     <orderEntry type="library" name="easymock-3.2" level="application" />
     <orderEntry type="library" name="objenesis-tck-2.1" level="application" />
     <orderEntry type="library" name="cglib-3.1" level="application" />
+    <orderEntry type="library" name="asm-5.0.3" level="application" />
   </component>
 </module>

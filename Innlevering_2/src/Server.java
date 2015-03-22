@@ -1,5 +1,3 @@
-import sun.security.util.*;
-
 import java.io.*;
 import java.net.*;
 import java.sql.*;
@@ -13,7 +11,7 @@ public class Server implements Runnable, AutoCloseable {
     private final ServerSocket serverSocket;
     private final ExecutorService executor;
     private final List<ClientConnection> clients = new ArrayList<>();
-    private boolean openConnection = true;
+    private boolean connectionIsOpen = true;
 
     public Server() throws IOException {
         serverSocket = new ServerSocket(20301);
@@ -29,7 +27,8 @@ public class Server implements Runnable, AutoCloseable {
     }
 
     public void start() throws IOException, SQLException {
-        while (openConnection) {
+        System.out.println("Server started, waiting for ClientConnections ...");
+        while (connectionIsOpen) {
             Socket accept = serverSocket.accept();
             ClientConnection client = new ClientConnection(accept);
             clients.add(client);
@@ -42,7 +41,7 @@ public class Server implements Runnable, AutoCloseable {
         try {
             start();
         } catch (Exception e) {
-            openConnection = false;
+            connectionIsOpen = false;
             System.out.println("Serveren ble stengt ned");
             e.printStackTrace();
             try {
@@ -56,7 +55,6 @@ public class Server implements Runnable, AutoCloseable {
     @Override
     public void close() throws Exception {
         serverSocket.close();
-        Debug.println("Server Socket", "Closed");
         clients.forEach(clientConnection -> {
             try {
                 clientConnection.close();
